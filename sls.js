@@ -19,7 +19,8 @@ app.use(cors({}));
 app.use(conditional());
 if (process.env.SERVERLESS) {
     app.use(async (ctx, next) => {
-        ctx.req.headers["accept-encoding"] = "identity";return next()
+        ctx.req.headers["accept-encoding"] = "identity";
+        return next();
     });
 }
 app.use(compress({}));
