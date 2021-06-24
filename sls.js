@@ -8,6 +8,8 @@ const cors = require("@koa/cors");
 const conditional = require("koa-conditional-get");
 const koaetag = require("koa-etag");
 const http = require("http");
+
+const routes = require("./routes.js");
 const app = new Koa();
 const router = new KoaRouter();
 app.use(logger());
@@ -19,6 +21,9 @@ app.use(compress({}));
 
 app.use(koaetag({}));
 // Routes
+routes.forEach(({ method, path, middleware }) => {
+    Reflect.apply(Reflect.get(router, method), router, [path, middleware]);
+});
 router.get("/", async (ctx) => {
     await sendFile(ctx, path.join(__dirname, "index.html"));
 });

@@ -4,7 +4,8 @@
     "main": "index.js",
     "license": "MIT",
     "scripts": {
-        "start": "node index.js"
+        "start": "node index.js",
+        "format":"prettier --write *.md *.js *.html"
     },
     "keywords": [],
     "author": "masx200 <masx200@qq.com>",
@@ -16,11 +17,15 @@
         "koa-conditional-get": "^3.0.0",
         "koa-etag": "^4.0.0",
         "koa-logger": "^3.2.1",
+        "koa-proxies": "^0.12.1",
         "koa-router": "^10.0.0",
         "koa-sendfile": "^3.0.0"
     },
     "repository": {
         "type": "git",
         "url": "https://gitee.com/masx200/rss-proxy-serverless"
+    },
+    "devDependencies": {
+        "prettier": "^2.3.1"
     }
 }
