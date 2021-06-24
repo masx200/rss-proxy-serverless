@@ -7,11 +7,12 @@ const compress = require("koa-compress");
 const cors = require("@koa/cors");
 const conditional = require("koa-conditional-get");
 const koaetag = require("koa-etag");
-const http = require("http");
-
-const routes = require("./routes.js");
+const range = require("@masx200/koa-range");
+const koastreametag = require("@masx200/koa-stream-etag");
+const proxypoints = require("./proxypoints.js");
 const app = new Koa();
 const router = new KoaRouter();
+app.use(range);
 app.use(logger());
 app.use(AccessControlAllowOrigin());
 app.use(cors({}));
@@ -19,11 +20,10 @@ app.use(conditional());
 
 app.use(compress({}));
 
+app.use(koastreametag({}));
 app.use(koaetag({}));
-// Routes
-routes.forEach(({ method, path, middleware }) => {
-    Reflect.apply(Reflect.get(router, method), router, [path, middleware]);
-});
+proxypoints(app);
+
 router.get("/", async (ctx) => {
     await sendFile(ctx, path.join(__dirname, "index.html"));
 });
@@ -31,8 +31,6 @@ router.get("/", async (ctx) => {
 app.use(router.allowedMethods());
 app.use(router.routes());
 
-// don't forget to export!
-// module.exports = app;
 function AccessControlAllowOrigin() {
     return async (ctx, next) => {
         ctx.response.set("Access-Control-Allow-Origin", "*");
@@ -40,13 +38,4 @@ function AccessControlAllowOrigin() {
     };
 }
 
-if (process.env.SERVERLESS) {
-    module.exports = app;
-} else {
-    const server = http.createServer(app.callback());
-
-    server.on("listening", () => {
-        console.log(`Server listening on ` + JSON.stringify(server.address()));
-    });
-    server.listen(3000);
-}
+module.exports = app;

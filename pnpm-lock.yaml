@@ -2,6 +2,8 @@ lockfileVersion: 5.3
 
 specifiers:
   '@koa/cors': ^3.1.0
+  '@masx200/koa-range': ^1.0.4
+  '@masx200/koa-stream-etag': ^5.0.3
   koa: ^2.13.1
   koa-compress: ^5.0.1
   koa-conditional-get: ^3.0.0
@@ -14,6 +16,8 @@ specifiers:
 
 dependencies:
   '@koa/cors': 3.1.0
+  '@masx200/koa-range': 1.0.4
+  '@masx200/koa-stream-etag': 5.0.3
   koa: 2.13.1
   koa-compress: 5.0.1
   koa-conditional-get: 3.0.0
@@ -33,6 +37,19 @@ packages:
     engines: {node: '>= 8.0.0'}
     dependencies:
       vary: 1.1.2
+    dev: false
+
+  /@masx200/koa-range/1.0.4:
+    resolution: {integrity: sha512-LEqsEpTaJbTB7YylfWYxLofga6Xqk0H8We70a/QT8SHxKOiIDiLwKGiVrp7PHWnn+8QoOqAC7/S5ttXB4X8tiA==}
+    engines: {node: '>=7'}
+    dependencies:
+      stream-slice: 0.1.2
+    dev: false
+
+  /@masx200/koa-stream-etag/5.0.3:
+    resolution: {integrity: sha512-p4UNfRiPU/0r4wIU/4+nDKwZsrXJyWVkw8zXiPKyh3/BpjDPdSNC+PX+9s1ZfWnOdZICoRuhn7KCUnxywlilIg==}
+    dependencies:
+      etag: 1.8.1
     dev: false
 
   /accepts/1.3.7:
@@ -501,6 +518,10 @@ packages:
   /statuses/2.0.1:
     resolution: {integrity: sha512-RwNA9Z/7PrK06rYLIzFMlaF+l73iwpzsqRIFgbMLbTcLD6cOao82TaWefPXQvB2fOC4AjuYSEndS7N/mTCbkdQ==}
     engines: {node: '>= 0.8'}
+    dev: false
+
+  /stream-slice/0.1.2:
+    resolution: {integrity: sha1-LcT04bk2+xPz6zmi3vGTJ5jQeks=}
     dev: false
 
   /supports-color/5.5.0:
