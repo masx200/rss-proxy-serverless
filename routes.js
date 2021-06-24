@@ -1,12 +1,18 @@
 const proxy = require("koa-proxies");
-module.exports = [
-    {
+const proxyurlsprefixs = [{ host: "www.tmtpost.com", path: "/rss" }];
+module.exports = proxyurlsprefixs.map(({ host, path }) => {
+    console.log(host, path);
+    return {
         method: "get",
-        path: "/www.tmtpost.com/rss",
+        path: "/" + host + path,
         middleware: proxy("/", {
             changeOrigin: true,
             logs: true,
-            target: "https://www.tmtpost.com/rss",
+            target: "https://" + host,
+            rewrite(path) {
+                console.log(path);
+                return path;
+            },
         }),
-    },
-];
+    };
+});
