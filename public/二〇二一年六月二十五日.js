@@ -5,7 +5,6 @@
     "www.ithome.com",
     "www.ifanr.com",
     "www.pingwest.com",
-
 ]
     .map((u) => {
         var a = document.createElement("a");

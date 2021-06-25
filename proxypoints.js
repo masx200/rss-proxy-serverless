@@ -6,7 +6,6 @@ const proxyurlsprefixs = [
     "www.ithome.com",
     "www.ifanr.com",
     "www.pingwest.com",
-    
 ];
 module.exports = function (app) {
     middles.forEach((m) => {
