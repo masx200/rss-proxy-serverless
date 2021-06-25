@@ -31,7 +31,9 @@
 
                     a.href = "./" + u + "/";
                     a.innerText = a.href;
-                    return a;
+                    var h2 = document.createElement("h2");
+                    h2.appendChild(a);
+                    return h2;
                 })
                 .forEach((a) => {
                     document.body.appendChild(a);
