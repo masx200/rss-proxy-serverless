@@ -1,5 +1,5 @@
 const proxy = require("koa-proxies");
-const proxyurlsprefixs = ["www.tmtpost.com", "www.iplaysoft.com"];
+const proxyurlsprefixs = ["www.landiannews.com","www.tmtpost.com", "www.iplaysoft.com"];
 module.exports = function (app) {
     middles.forEach((m) => {
         app.use(m);
