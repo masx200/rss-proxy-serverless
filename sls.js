@@ -12,7 +12,7 @@ const koastreametag = require("@masx200/koa-stream-etag");
 const proxypoints = require("./proxypoints.js");
 const app = new Koa();
 const router = new KoaRouter();
-
+app.use(setcache());
 app.use(httpssecure());
 app.use(range);
 app.use(logger());
@@ -32,6 +32,13 @@ router.get("/", sendindex());
 
 app.use(router.allowedMethods());
 app.use(router.routes());
+
+function setcache() {
+    return async (ctx, next) => {
+        ctx.res.setHeader("cache-control", "max-age=120");
+        return next();
+    };
+}
 
 function httpssecure() {
     return async (ctx, next) => {
