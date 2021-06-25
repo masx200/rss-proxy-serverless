@@ -60,7 +60,7 @@ function identity() {
 
 function sendindex() {
     return async (ctx) => {
-        await sendFile(ctx, path.join(__dirname, "index.html"));
+        await sendFile(ctx, path.join(__dirname, "public", "index.html"));
     };
 }
 

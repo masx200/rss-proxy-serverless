@@ -5,7 +5,7 @@
     "license": "MIT",
     "scripts": {
         "start": "node index.js",
-        "format": "prettier --write *.md *.js *.html"
+        "format": "prettier --write *.md *.js *.html */*.html */*.js */*.css"
     },
     "keywords": [],
     "author": "masx200 <masx200@qq.com>",
