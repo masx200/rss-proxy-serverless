@@ -12,15 +12,17 @@
 
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+
+
+```shell
+pnpm install
+```
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+```shell
+npm run start
+```
 
 #### 参与贡献
 
