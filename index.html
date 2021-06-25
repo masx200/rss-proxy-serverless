@@ -17,5 +17,25 @@
             Welcome to Koa.js application created by
             <a href="https://serverlesscloud.cn/">Serverless Framework.</a>
         </h1>
+        <script>
+            [
+                "www.landiannews.com",
+                "www.tmtpost.com",
+                "www.iplaysoft.com",
+                "www.ithome.com",
+                "www.ifanr.com",
+                "www.pingwest.com",
+            ]
+                .map((u) => {
+                    var a = document.createElement("a");
+
+                    a.href = "./" + u + "/";
+
+                    return a;
+                })
+                .forEach((a) => {
+                    document.body.appendChild(a);
+                });
+        </script>
     </body>
 </html>
