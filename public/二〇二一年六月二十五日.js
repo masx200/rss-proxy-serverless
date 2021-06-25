@@ -17,5 +17,5 @@
         return h2;
     })
     .forEach((a) => {
-        document.body.appendChild(a);
+        document.getElementById("root").appendChild(a);
     });
