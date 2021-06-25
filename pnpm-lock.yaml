@@ -12,6 +12,7 @@ specifiers:
   koa-proxies: ^0.12.1
   koa-router: ^10.0.0
   koa-sendfile: ^3.0.0
+  koa-sslify: ^5.0.0
   koa-static: ^5.0.0
   prettier: ^2.3.1
 
@@ -27,6 +28,7 @@ dependencies:
   koa-proxies: 0.12.1_koa@2.13.1
   koa-router: 10.0.0
   koa-sendfile: 3.0.0
+  koa-sslify: 5.0.0
   koa-static: 5.0.0
 
 devDependencies:
@@ -418,6 +420,11 @@ packages:
       etag: 1.8.1
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /koa-sslify/5.0.0:
+    resolution: {integrity: sha512-3Qc/DxPcH4BavYkt7xOVDFbaS7nR8oCozb/0dlIpLlyGVhFXcjHETWBwE3QrDLwjKOVJj6ykwRJoNzPT9QxCag==}
+    engines: {node: '>6.0.0'}
     dev: false
 
   /koa-static/5.0.0:

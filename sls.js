@@ -13,11 +13,23 @@ const proxypoints = require("./proxypoints.js");
 
 const koastatic = require("koa-static");
 const app = new Koa();
+
+app.use(logger());
 const router = new KoaRouter();
+const { default: sslify } = require("koa-sslify");
+app.use(
+    sslify({
+        resolver: (ctx) => {
+            if (!ctx.request.header["x-api-scheme"]) {
+                return true;
+            }
+            return ctx.request.header["x-api-scheme"] === "https";
+        },
+    })
+);
 app.use(setcache());
 app.use(httpssecure());
 app.use(range);
-app.use(logger());
 app.use(AccessControlAllowOrigin());
 app.use(cors({}));
 app.use(conditional());
