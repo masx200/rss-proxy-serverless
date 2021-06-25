@@ -31,10 +31,10 @@ app.use(koaetag({}));
 proxypoints(app);
 
 router.get("/", sendindex());
-router.get("/testreq", async (ctx, next) => {
+/*router.get("/testreq", async (ctx, next) => {
     const { method, url, headers } = ctx.req;
     ctx.body = { method, url, headers };
-});
+});*/
 app.use(router.allowedMethods());
 app.use(router.routes());
 
