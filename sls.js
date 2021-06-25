@@ -10,6 +10,8 @@ const koaetag = require("koa-etag");
 const range = require("@masx200/koa-range");
 const koastreametag = require("@masx200/koa-stream-etag");
 const proxypoints = require("./proxypoints.js");
+
+const koastatic = require("koa-static");
 const app = new Koa();
 const router = new KoaRouter();
 app.use(setcache());
@@ -70,5 +72,5 @@ function AccessControlAllowOrigin() {
         return next();
     };
 }
-
+app.use(koastatic(path.join(__dirname, "public"), { hidden: true }));
 module.exports = app;
