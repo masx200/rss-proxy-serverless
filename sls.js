@@ -12,6 +12,11 @@ const koastreametag = require("@masx200/koa-stream-etag");
 const proxypoints = require("./proxypoints.js");
 const app = new Koa();
 const router = new KoaRouter();
+
+app.use(async (ctx, next) => {
+    ctx.res.setHeader("Strict-Transport-Security", "max-age=31536000");
+    return next();
+});
 app.use(range);
 app.use(logger());
 app.use(AccessControlAllowOrigin());
