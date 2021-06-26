@@ -9,7 +9,7 @@
     .map((u) => {
         var a = document.createElement("a");
 
-        a.href = "./" + u + "/";
+        a.href = "./" + u + "/" + "feed";
         a.innerText = a.href;
         var h2 = document.createElement("h2");
         h2.appendChild(a);

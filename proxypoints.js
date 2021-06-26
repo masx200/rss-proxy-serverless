@@ -14,7 +14,7 @@ module.exports = function (app) {
 };
 const middles = proxyurlsprefixs.map((host) => {
     return async (ctx, next) => {
-        if (!ctx.req.url.startsWith("/" + host + "/")) {
+        if (!ctx.req.url.startsWith("/" + host + "/" + "feed")) {
             return next();
         }
         const promid = proxy("/", {
