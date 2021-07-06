@@ -18,6 +18,11 @@ const middles = proxyurlsprefixs.map((host) => {
             return next();
         }
         const promid = proxy("/", {
+            events: {
+                proxyRes(proxyRes, req, res) {
+                    proxyRes.headers["cache-control"] = "max-age=300";
+                },
+            },
             followRedirects: true,
             changeOrigin: true,
             logs: true,

@@ -17,16 +17,9 @@ const app = new Koa();
 app.use(logger());
 const router = new KoaRouter();
 const { default: sslify } = require("koa-sslify");
-app.use(
-    sslify({
-        resolver: (ctx) => {
-            if (!ctx.request.header["x-api-scheme"]) {
-                return true;
-            }
-            return ctx.request.header["x-api-scheme"] === "https";
-        },
-    })
-);
+if (process.env.SERVERLESS) {
+    app.use(createsslify());
+}
 app.use(setcache());
 app.use(httpssecure());
 app.use(range);
@@ -49,6 +42,17 @@ router.get("/", sendindex());
 });*/
 app.use(router.allowedMethods());
 app.use(router.routes());
+
+function createsslify() {
+    return sslify({
+        resolver: (ctx) => {
+            if (!ctx.request.header["x-api-scheme"]) {
+                return true;
+            }
+            return ctx.request.header["x-api-scheme"] === "https";
+        },
+    });
+}
 
 function setcache() {
     return async (ctx, next) => {
