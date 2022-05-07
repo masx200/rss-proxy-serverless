@@ -9,7 +9,7 @@ const proxyurlsprefixs = [
 ];
 module.exports = function (app) {
     middles.forEach((m) => {
-        app.use(m);
+        app.get("/",m);
     });
 };
 const middles = proxyurlsprefixs.map((host) => {
