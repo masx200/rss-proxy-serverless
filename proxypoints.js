@@ -7,9 +7,9 @@ const proxyurlsprefixs = [
     "www.ifanr.com",
     "www.pingwest.com",
 ];
-module.exports = function (app) {
+module.exports = function (router) {
     middles.forEach((m) => {
-        app.get("/",m);
+        router.get("/:host/feed", m);
     });
 };
 const middles = proxyurlsprefixs.map((host) => {

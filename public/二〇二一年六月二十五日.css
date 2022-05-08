@@ -1,4 +1,5 @@
-@import url("https://cdn.staticfile.org/normalize/0/normalize.min.css");
+@import url("https://cdn.staticfile.org/normalize/8.0.1/normalize.min.css");
+@import url("https://cdn.staticfile.org/bootstrap/5.1.3/css/bootstrap.min.css");
 h1 {
     text-align: center;
     width: 600px;

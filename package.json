@@ -1,11 +1,11 @@
 {
-    "name": "rss-proxy-serverless",
-    "version": "1.0.1",
+    "name": "@masx200/rss-proxy-serverless",
+    "version": "1.0.2",
     "main": "index.js",
     "license": "MIT",
     "scripts": {
         "start": "node index.js",
-        "format": "prettier --write *.md *.js *.html */*.html */*.js */*.css"
+        "format": "prettier --write *.md *.js */*.html */*.css"
     },
     "keywords": [],
     "author": "masx200 <masx200@qq.com>",
@@ -14,6 +14,8 @@
         "@koa/cors": "^3.1.0",
         "@masx200/koa-range": "^1.0.4",
         "@masx200/koa-stream-etag": "^5.0.4",
+        "@types/koa": "^2.13.4",
+        "@types/koa-etag": "^3.0.0",
         "koa": "^2.13.1",
         "koa-compress": "^5.0.1",
         "koa-conditional-get": "^3.0.0",
@@ -31,5 +33,6 @@
     },
     "devDependencies": {
         "prettier": "^2.3.1"
-    }
+    },
+    "packageManager": "yarn@3.2.0"
 }
