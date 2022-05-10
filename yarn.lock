@@ -14,21 +14,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@masx200/koa-range@npm:^1.0.4":
-  version: 1.0.4
-  resolution: "@masx200/koa-range@npm:1.0.4"
+"@masx200/koa-range@npm:^1.0.5":
+  version: 1.0.5
+  resolution: "@masx200/koa-range@npm:1.0.5"
   dependencies:
     stream-slice: ^0.1.2
-  checksum: cbd1a77f84d5394c4ca423fc3104a5cda585296ef6a962ab0e668758d1f2d9f3c3e80fee0390214d23e0ff9cbad39083716ee7342a41493aa2e217b627a2908e
+  checksum: 7c20d5992507e97933ff5291807d153aff3979521015c949cdd21fc2049ff5b6a0e13283749ba150d35dee05aa6bf73a83c4ee260f22b1361b64486a6e2b751a
   languageName: node
   linkType: hard
 
-"@masx200/koa-stream-etag@npm:^5.0.4":
-  version: 5.0.4
-  resolution: "@masx200/koa-stream-etag@npm:5.0.4"
+"@masx200/koa-stream-etag@npm:^5.0.6":
+  version: 5.0.6
+  resolution: "@masx200/koa-stream-etag@npm:5.0.6"
   dependencies:
     etag: ^1.8.1
-  checksum: 8b4e030718f5f490fa0b634a7aca81c89e6caed573a800cd0aef0e844b2034a37c65d03d4307dd04388b703be2483803db2b3b199196b1e932928cbedb7a1a84
+  checksum: e5a07b0302cf702072b7943dc1429484ab32414146cd2a2e0bf6cdda19c4367ee937e50a261241c203f5601ccce8a7f91eb421185a28b74c838fd77026e24c2c
   languageName: node
   linkType: hard
 
@@ -37,8 +37,8 @@ __metadata:
   resolution: "@masx200/rss-proxy-serverless@workspace:."
   dependencies:
     "@koa/cors": ^3.1.0
-    "@masx200/koa-range": ^1.0.4
-    "@masx200/koa-stream-etag": ^5.0.4
+    "@masx200/koa-range": ^1.0.5
+    "@masx200/koa-stream-etag": ^5.0.6
     "@types/koa": ^2.13.4
     "@types/koa-etag": ^3.0.0
     koa: ^2.13.1
