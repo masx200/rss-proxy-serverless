@@ -6,7 +6,7 @@
     "scripts": {
         "test": "vitest",
         "start": "node index.js",
-        "format": "prettier --write *.md *.js */*.html */*.css"
+        "format": "prettier --write *.md *.js */*.html */*.css *.ts */*.ts"
     },
     "keywords": [],
     "author": "masx200 <masx200@qq.com>",
