@@ -2,7 +2,7 @@
 
 #### 介绍
 
-反向代理服务器,基于 koa2
+rss订阅的反向代理服务器,基于 koa2
 
 可部署到腾讯云 serverless
 
@@ -13,7 +13,7 @@
 #### 安装教程
 
 ```shell
-pnpm install
+yarn install
 ```
 
 #### 使用说明
