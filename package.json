@@ -3,6 +3,9 @@
     "version": "1.0.5",
     "main": "index.js",
     "license": "MIT",
+    "overrides":{
+        "follow-redirects":"1.15.5"
+    },
     "scripts": {
         "test": "vitest run",
         "start": "node index.js",
