@@ -4,12 +4,12 @@
     "main": "index.js",
     "license": "MIT",
     "overrides": {
-        "vite": "5.0.12",
+        "vite": "5.4.11",
         "follow-redirects": "1.15.5"
     },
     "resolutions": {
         "follow-redirects": "1.15.5",
-        "vite": "5.0.12"
+        "vite": "5.4.11"
     },
     "scripts": {
         "test": "vitest run",
@@ -44,7 +44,7 @@
         "@types/node": "^20.11.5",
         "prettier": "^3.2.4",
         "undici": "^6.4.0",
-        "vite": "5.0.12",
+        "vite": "5.4.11",
         "vitest": "^1.2.1"
     },
     "packageManager": "yarn@3.2.0"
